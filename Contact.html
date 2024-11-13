@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Grooming Services</title>
+    <link rel="stylesheet" href="css/Style.css"/>
+
+</head>
+<body>
+    <div id="header">
+        <h1>Grooming Services</h1>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="services.html">Services</a> |
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </div>
+
+    <div id="main-content">
+        <h2>Contact Us</h2>
+        <div id="contact-info">
+            <h3>Our Location</h3>
+            <p>123 Groom Street,<br> Petville, PV 12345</p>
+            
+            <h3>Phone</h3>
+            <p>(123) 456-7890</p>
+            
+            <h3>Email</h3>
+            <p><a href="mailto:info@groomingservices.com">info@groomingservices.com</a></p>
+        </div>
+
+        <div id="appointment-form">
+            <h3>Book an Appointment</h3>
+            <form action="#" method="post" onsubmit="return validateForm()">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="e.g., 1234567890">
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="service">Select Service:</label>
+                <select id="service" name="service" required>
+                    <option value="full_grooming">Full Grooming</option>
+                    <option value="bath_and_brush">Bath & Brush</option>
+                    <option value="nail_trimming">Nail Trimming</option>
+                    <option value="ear_cleaning">Ear Cleaning</option>
+                </select>
+
+                <label for="appointment_date">Preferred Date:</label>
+                <input type="date" id="appointment_date" name="appointment_date" required>
+
+                <label for="comments">Additional Comments:</label>
+                <textarea id="comments" name="comments" rows="4" placeholder="Any special requests or information..."></textarea>
+
+                <button type="submit">Submit Appointment Request</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="footer">
+        <p>&copy; 2024 Grooming Services - All Rights Reserved</p>
+    </div>
+
+    <script>
+        function validateForm() {
+            const phone = document.getElementById("phone").value;
+            const phonePattern = /^[0-9]{10}$/;
+            
+            if (!phonePattern.test(phone)) {
+                alert("Please enter a valid 10-digit phone number.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
